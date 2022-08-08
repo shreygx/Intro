@@ -30,3 +30,34 @@
 *.exe
 *.out
 *.app
+#include<bits/stdc++.h>
+using namespace std;
+struct Node{
+int data;
+struct Node*left;
+struct Node*right;
+
+Node(int val)
+{
+    data=val;
+left=NULL;
+right=NULL;
+}
+};
+void inorder(Node* root)
+{
+    if(!root)return;
+    inorder(root->left);
+    cout<<root->data<<endl;
+    inorder(root->right);
+}
+int main()
+{
+
+Node*root=new Node(14);
+root->left=new Node(10);
+root->right=new Node(15);
+
+inorder(root);
+
+}
